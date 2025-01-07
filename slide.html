@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nav slider</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>nav slider 2</title>
+    <link rel="stylesheet" href="./slide.css">
+    <script src="https://kit.fontawesome.com/1159b8e81c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
    <nav>
     <div class="nav-manu">
 
-        <div class="nav-icon">
+        <!-- <div class="nav-icon">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+
+            
+        </div> -->
+
+        <i class=" nav-icon fa-solid fa-bars"></i>
 
         <ul class="nav-links">
             <li class="menu-item">
-                <a href="#" class="toggle-submenu">Home</a>
+                <a href="#" class="toggle-submenu">Home <span class="arrow-icon">&#9654;</span></a>
                 <!-- Submenu -->
                 <ul class="submenu">
                     <li><a href="#">Dashboard</a></li>
@@ -33,11 +38,10 @@
         </ul>
         
         
+        
 
 
-        <div class="search">
-            <input type="search" placeholder="search">
-        </div>
+      
 
 
        
@@ -49,57 +53,20 @@
 
    <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
 
-   <!-- <script>
-    $(document).ready(function(){
-
-        $('.nav-icon').click(function(){
-            $('.nav-links').toggleClass('left-slider');
-        })
-
-
-
-
-
-
-    })
-   </script> -->
-
-
-
 
    <script>
-//     $(document).ready(function () {
-//     $('.nav-icon').click(function (e) {
-//         $('.nav-links').toggleClass('left-slider');
-//         e.stopPropagation(); // Prevents the click event from propagating to the document
-//     });
-
-//     $(document).click(function (e) {
-//         if (!$('.nav-links').is(e.target) && $('.nav-links').has(e.target).length === 0) {
-//             // Check if the clicked element is outside the sidebar
-//             $('.nav-links').removeClass('left-slider');
-//         }
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 $(document).ready(function () {
     // Toggle submenu on clicking "Home"
     $('.toggle-submenu').click(function (e) {
-        e.preventDefault(); // Prevent the default link behavior
-        $(this).siblings('.submenu').slideToggle(300); // Toggle submenu visibility with animation
+        e.preventDefault(); // Prevent default link behavior
+
+        $(this).siblings('.submenu').slideToggle(300); // Toggle submenu visibility
+
+        // Toggle the arrow direction
+        $(this).find('.arrow-icon').toggleClass('arrow-down');
     });
 
     // Hamburger menu toggle
@@ -108,13 +75,13 @@ $(document).ready(function () {
         e.stopPropagation();
     });
 
+    // Close sidebar when clicking outside it
     $(document).click(function (e) {
         if (!$('.nav-links').is(e.target) && $('.nav-links').has(e.target).length === 0) {
             $('.nav-links').removeClass('left-slider');
         }
     });
 });
-
 
    </script>
     

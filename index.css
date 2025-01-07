@@ -4,6 +4,48 @@
     box-sizing: border-box;
 }
 
+
+/* Initially hide the submenu */
+.submenu {
+    display: none;
+    padding: 10px 0;
+    list-style: none;
+    background-color: rgb(71, 19, 19);
+    border: 1px solid white;
+    margin: 5px 0 0 0;
+}
+
+.submenu li {
+    padding: 5px 15px;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ensure that other menu items move down when submenu appears */
+.menu-item {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav-manu{
     background-color: black;
     padding: 20px 10px;
@@ -57,7 +99,7 @@
         top: 78px;
         left: -100%;
 
-        width: 300px;
+        width: 200px;
         height: 100%;
         background-color: rgb(71, 19, 19);
         display: flex;
